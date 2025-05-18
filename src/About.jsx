@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Card from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
+import { Card, CardContent, Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import Box from '@mui/material/Box';
 import "./css/about.css";
 
 const About = () => {
@@ -12,6 +10,18 @@ const About = () => {
     const handleCardChange = (card) => {
         setSelectedCard(card);
     };
+
+    const logos = [
+        { src: '/img/html.png', alt: 'HTML' },
+        { src: '/img/css.png', alt: 'CSS' },
+        { src: '/img/js.png', alt: 'JavaScript' },
+        { src: '/img/php.png', alt: 'React' },
+        { src: '/img/react.png', alt: 'Node.js' },
+        { src: '/img/tlwnd.png', alt: 'Python' },
+        { src: '/img/bootstrap.png', alt: 'PHP' },
+        { src: '/img/figma.png', alt: 'PHP' },
+        { src: '/img/github.png', alt: 'MySQL' },
+    ];
 
     return (
         <div className="about-container">
@@ -46,14 +56,14 @@ const About = () => {
                         onClick={() => handleCardChange("cv")}
                         sx={buttonStyle("cv", selectedCard)}
                     >
-                        CV
+                        Journey
                     </Button>
                 </ButtonGroup>
             </div>
 
             {selectedCard === "about" && (
                 <Card variant="outlined" sx={cardStyle}>
-                    <Typography style={{ wordSpacing: '3px', fontSize: '1.2rem' }}>
+                    <Typography style={{ wordSpacing: '3px', fontSize: '1.1rem', marginBottom: '20px' }}>
                         Hi! My name is <b>Elsa Salsa Bila</b>. I’m a Frontend Developer and a graduate of Wikrama Bogor
                         Vocational High School, majoring in Software and Game Development. I have a strong passion
                         and skill set in front-end development, and I’m committed to continuous learning and growth
@@ -61,10 +71,13 @@ const About = () => {
                         internship as a Frontend Developer, where I honed my skills in building responsive and
                         user-friendly web interfaces.
                     </Typography>
+                    <a href="/Elsa Salsa Bila_CV.pdf" download>
+                        <Button variant="contained">Click Here</Button>
+                    </a>
                 </Card>
             )}
 
-            {selectedCard === "skills" && (
+            {selectedCard === "cv" && (
                 <Card variant="outlined" sx={cardStyle}>
                     <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                         <Box sx={{ flex: '1 1 45%' }}>
@@ -106,14 +119,52 @@ const About = () => {
                 </Card>
             )}
 
-            {selectedCard === "cv" && (
+            {selectedCard === "skills" && (
                 <Card variant="outlined" sx={cardStyle}>
-                    <Typography style={{ wordSpacing: '3px', fontSize: '1.2rem', marginBottom: '25px' }}>
+                    {/* <Typography style={{ wordSpacing: '3px', fontSize: '1.2rem', marginBottom: '25px' }}>
                         Let's see my CV!
                     </Typography>
                     <a href="/Elsa Salsa Bila_CV.pdf" download>
                         <Button variant="contained">Click Here</Button>
-                    </a>
+                    </a> */}
+                    <CardContent>
+                        <Box
+                            sx={{
+                                display: 'grid',
+                                gridTemplateColumns: 'repeat(3, 1fr)',
+                                columnGap: '20px',
+                                rowGap: '40px',
+                                justifyItems: 'center',
+                                alignItems: 'center',
+                                marginTop: '10px',
+                            }}
+                        >
+                            {logos.map((logo, index) => (
+                                <Box
+                                    key={index}
+                                    sx={{
+                                        width: 64,
+                                        height: 64,
+                                        borderRadius: '12px',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        padding: '8px',
+                                    }}
+                                >
+                                    <img
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        style={{
+                                            width: '80px',
+                                            height: '80px',
+                                            objectFit: 'contain',
+                                        }}
+                                    />
+                                </Box>
+                            ))}
+                        </Box>
+                    </CardContent>
                 </Card>
             )}
         </div>
