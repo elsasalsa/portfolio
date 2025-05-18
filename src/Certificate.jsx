@@ -18,62 +18,62 @@ const Certificate = () => {
     {
       title: 'Typing Mastery',
       image: '/cert/literasi.jpg',
-      description: 'Participate in literacy activities in order to use social media wisely',
+      description: 'Participate in a seminar on literacy wisely using social media',
     },
     {
       title: 'Web Development',
       image: '/cert/k3.jpg',
-      description: 'Completed ReactJS course from Udemy.',
+      description: 'Complete e-learning regarding occupational health and safety',
     },
     {
       title: 'JavaScript Fundamentals',
       image: '/cert/ldk.png',
-      description: 'Basic JavaScript programming mastery.',
+      description: 'Student Leadership Basic Training Participants',
     },
     {
       title: 'Database Management',
       image: '/cert/dasar-pem.jpg',
-      description: 'MySQL and MongoDB certification.',
+      description: 'Take basic programming classes to become a software developer',
     },
     {
       title: 'UI/UX Design',
       image: '/cert/meniti.jpg',
-      description: 'Figma & Adobe XD design course finished.',
+      description: 'Take classes to build a career as a software developer',
     },
     {
       title: 'Cybersecurity Basics',
       image: '/cert/dasar-github.jpg',
-      description: 'Completed course on digital security.',
+      description: 'Learn git basics with github',
     },
     {
       title: 'Python Programming',
       image: '/cert/cyberlabs.jpg',
-      description: 'Python basics & scripting mastery.',
+      description: 'Industrial class to learn backend science with javascript framework',
     },
     {
       title: 'Git & GitHub',
       image: '/cert/vue.jpg',
-      description: 'Version control with Git/GitHub certified.',
+      description: 'Industrial class to learn frontend science using vue js',
     },
     {
       title: 'Networking Essentials',
       image: '/cert/ratatype.jpg',
-      description: 'Networking basics and protocols.',
-    },
-    {
-      title: 'Agile Project Management',
-      image: '/cert/dea.jpg',
-      description: 'Scrum methodology and agile tools.',
+      description: 'Practice fast typing with pinpoint accuracy',
     },
     {
       title: 'Mobile App Development',
       image: '/cert/igdx.jpg',
-      description: 'Flutter & Dart beginner certification.',
+      description: 'Participate in seminar activities for prospective game developers',
     },
     {
       title: 'Cloud Computing',
       image: '/cert/job-shadow.jpg',
-      description: 'AWS Cloud Practitioner Certificate.',
+      description: 'Participate in a program to understand the profession',
+    },
+    {
+      title: 'Agile Project Management',
+      image: '/cert/dea.jpg',
+      description: 'Complete basic digital marketing training',
     },
   ];
 

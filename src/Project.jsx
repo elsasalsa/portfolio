@@ -18,7 +18,7 @@ const Project = () => {
     { title: 'Project 8', image: '/project/das.png', link: 'https://example.com/project8' },
     { title: 'Project 9', image: '/project/codevo.png', link: 'https://codevocompany.netlify.app' },
     { title: 'Project 10', image: '/project/kasir.png', link: 'https://example.com/project10' },
-    { title: 'Project 11', image: '/project/porto2.png', link: 'https://example.com/project11' },
+    { title: 'Project 11', image: '/project/porto2.png', link: 'https://elsaportfolios.netlify.app' },
   ];
 
   useEffect(() => {
