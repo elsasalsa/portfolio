@@ -1,0 +1,41 @@
+.project-heading {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.project-container {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 70px;
+}
+
+.project-underline {
+  width: 150px;
+  height: 3px;
+  background-color: #66d9e8;
+  margin: 0 auto 30px;
+  border-radius: 2px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+.project-cards-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 16px 0;
+  padding-bottom: 30px;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.project-cards-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.project-cards-wrapper::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
