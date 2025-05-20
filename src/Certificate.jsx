@@ -103,7 +103,13 @@ const Certificate = () => {
               backdropFilter: "blur(10px)",
               border: "1px solid rgba(255, 255, 255, 0.2)",
               borderRadius: "16px",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
+              boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+              cursor: "pointer",
+              '&:hover': {
+                transform: "translateY(-8px)",
+                boxShadow: "0 12px 30px rgba(0,0,0,0.3)",
+              }
             }}
           >
             <CardActionArea onClick={() => handleOpen(cert.image)}>

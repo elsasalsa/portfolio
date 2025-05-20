@@ -8,17 +8,18 @@ const Project = () => {
   const scrollRef = useRef();
 
   const projectData = [
-    { title: 'Project 1', image: '/project/masjid.png', link: 'https://example.com/project1' },
-    { title: 'Project 2', image: '/project/apotek.png', link: 'https://example.com/project2' },
-    { title: 'Project 3', image: '/project/contact.png', link: 'https://example.com/project3' },
-    { title: 'Project 4', image: '/project/telat.png', link: 'https://example.com/project4' },
+    { title: 'Project 1', image: '/project/masjid.png', link: 'https://github.com/elsasalsa/webmasjid.git' },
+    { title: 'Project 2', image: '/project/apotek.png', link: 'https://github.com/elsasalsa/apoteker-app.git' },
+    // { title: 'Project 3', image: '/project/contact.png', link: 'https://example.com/project3' },
+    { title: 'Project 4', image: '/project/telat.png', link: 'https://github.com/elsasalsa/web-keterlambatan.git' },
     { title: 'Project 5', image: '/project/porto.png', link: 'https://elcvport.netlify.app' },
-    { title: 'Project 6', image: '/project/rm.png', link: 'https://example.com/project6' },
+    { title: 'Project 6', image: '/project/rm.png', link: 'https://github.com/elsasalsa/project-rumahmakan.git' },
     { title: 'Project 7', image: '/project/sivina2.png', link: 'https://example.com/project7' },
-    { title: 'Project 8', image: '/project/das.png', link: 'https://example.com/project8' },
-    { title: 'Project 9', image: '/project/codevo.png', link: 'https://codevocompany.netlify.app' },
-    { title: 'Project 10', image: '/project/kasir.png', link: 'https://example.com/project10' },
-    { title: 'Project 11', image: '/project/porto2.png', link: 'https://elsaportfolios.netlify.app' },
+    { title: 'Project 8', image: '/project/das.png', link: 'https://github.com/aryantiraihana/flood-monitoring-client/tree/master' },
+    { title: 'Project 9', image: '/project/profile.png', link: 'https://github.com/elsasalsa/profile-app.git' },
+    { title: 'Project 10', image: '/project/codevo.png', link: 'https://codevocompany.netlify.app' },
+    { title: 'Project 11', image: '/project/kasir.png', link: 'https://github.com/elsasalsa/kasir-ukk.git' },
+    { title: 'Project 12', image: '/project/porto2.png', link: 'https://elsaportfolios.netlify.app' },
   ];
 
   useEffect(() => {

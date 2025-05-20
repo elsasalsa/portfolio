@@ -54,9 +54,9 @@ function Home() {
               <Link to="certificate" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
                 Certificate
               </Link>
-              <Link to="contact" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+              {/* <Link to="contact" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
                 Contact
-              </Link>
+              </Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
