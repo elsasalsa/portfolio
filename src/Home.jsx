@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 import About from './About';
 import Project from './Project';
 import Certificate from './Certificate';
+import Contact from './Contact';
 import './css/home.css';
 
 function Home() {
@@ -33,11 +34,11 @@ function Home() {
         fixed="top"
         style={{
           paddingTop: '20px',
-          paddingBottom: '20px',              
-          backgroundColor: navbarBg ? 'rgba(36, 36, 62, 0.7)' : 'transparent', 
+          paddingBottom: '20px',
+          backgroundColor: navbarBg ? 'rgba(36, 36, 62, 0.7)' : 'transparent',
           transition: 'background-color 0.3s ease',
           backdropFilter: navbarBg ? 'blur(6px)' : 'none',
-          boxShadow: navbarBg ? '0 2px 10px rgba(0,0,0,0.2)' : 'none', 
+          boxShadow: navbarBg ? '0 2px 10px rgba(0,0,0,0.2)' : 'none',
         }}
       >
         <Container>
@@ -68,27 +69,33 @@ function Home() {
           <h1>Hi I am Elsa!</h1>
           <h3>Frontend Developer</h3>
 
-          <Button
-            onClick={() => navigate('/about')}
-            variant="outlined"
-            sx={{
-              color: '#66d9e8',
-              borderColor: '#66d9e8',
-              fontSize: '0.85rem',
-              paddingY: '8px',
-              paddingX: '16px',
-              borderRadius: '50px',
-              minWidth: 'auto',
-              width: 'fit-content',
-              textTransform: 'none',
-              '&:hover': {
-                backgroundColor: 'rgba(102, 217, 232, 0.1)',
-                borderColor: '#66d9e8',
-              },
-            }}
+          <a
+            href="/CV - Elsa Salsa Bila.pdf"
+            download="CV - Elsa Salsa Bila.pdf"
+            style={{ textDecoration: 'none' }}
           >
-            More About Me
-          </Button>
+            <Button
+              variant="outlined"
+              sx={{
+                color: '#66d9e8',
+                borderColor: '#66d9e8',
+                fontSize: '0.85rem',
+                paddingY: '8px',
+                paddingX: '16px',
+                borderRadius: '50px',
+                minWidth: 'auto',
+                width: 'fit-content',
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: 'rgba(102, 217, 232, 0.1)',
+                  borderColor: '#66d9e8',
+                },
+              }}
+            >
+              Download CV
+            </Button>
+          </a>
+
         </div>
       </div>
 
@@ -100,6 +107,9 @@ function Home() {
       </div>
       <div id="certificate">
         <Certificate />
+      </div>
+      <div id="contact">
+        <Contact />
       </div>
     </div>
   );

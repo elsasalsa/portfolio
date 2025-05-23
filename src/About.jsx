@@ -71,9 +71,6 @@ const About = () => {
                         internship as a Frontend Developer, where I honed my skills in building responsive and
                         user-friendly web interfaces.
                     </Typography>
-                    <a href="/CV_Elsa Salsa Bila.pdf" download>
-                        <Button variant="contained">Click Here</Button>
-                    </a>
                 </Card>
             )}
 
