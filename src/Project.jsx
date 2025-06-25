@@ -20,6 +20,7 @@ const Project = () => {
     { title: 'Project 10', image: '/project/codevo.png', link: 'https://codevocompany.netlify.app' },
     { title: 'Project 11', image: '/project/kasir.png', link: 'https://github.com/elsasalsa/kasir-ukk.git' },
     { title: 'Project 12', image: '/project/porto2.png', link: 'https://elsaportfolios.netlify.app' },
+    { title: 'Project 13', image: '/project/prodify.png', link: 'https://github.com/elsasalsa/product-web-app/tree/master' },
   ];
 
   useEffect(() => {
