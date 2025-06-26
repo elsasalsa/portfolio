@@ -30,14 +30,20 @@
 .social-list {
   display: grid;
   grid-template-columns: repeat(2, 3fr); /* 2 kolom */
-  gap: 15px 60px; /* baris x kolom */
+  gap: 20px 100px; /* baris x kolom */
 }
 
-.social-item {
+.social-item a {
+  text-decoration: none;  
+  color: inherit;           
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-item a:hover {
+  color: #66d9e8;    
 }
 
 .icon {
