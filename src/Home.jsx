@@ -65,38 +65,44 @@ function Home() {
 
       <div style={{ marginBottom: '100px' }}>
         <div className="hero-section">
-          <h6 className="side-line">Welcome to my portfolio</h6>
-          <h1>Hi I am Elsa!</h1>
-          <h3>Frontend Developer</h3>
+          <div className="hero-text">
+            <h6 className="side-line">Welcome to my portfolio</h6>
+            <h1>Hi I am Elsa!</h1>
+            <h3>Frontend Developer</h3>
 
-          <a
-            href="/CV - Elsa Salsa Bila.pdf"
-            download="CV - Elsa Salsa Bila.pdf"
-            style={{ textDecoration: 'none' }}
-          >
-            <Button
-              variant="outlined"
-              sx={{
-                color: '#66d9e8',
-                borderColor: '#66d9e8',
-                fontSize: '0.85rem',
-                paddingY: '8px',
-                paddingX: '16px',
-                borderRadius: '50px',
-                minWidth: 'auto',
-                width: 'fit-content',
-                textTransform: 'none',
-                '&:hover': {
-                  backgroundColor: 'rgba(102, 217, 232, 0.1)',
-                  borderColor: '#66d9e8',
-                },
-              }}
+            <a
+              href="/CV - Elsa Salsa Bila.pdf"
+              download="CV - Elsa Salsa Bila.pdf"
+              style={{ textDecoration: 'none' }}
             >
-              Download CV
-            </Button>
-          </a>
+              <Button
+                variant="outlined"
+                sx={{
+                  color: '#66d9e8',
+                  borderColor: '#66d9e8',
+                  fontSize: '0.85rem',
+                  paddingY: '8px',
+                  paddingX: '16px',
+                  borderRadius: '50px',
+                  minWidth: 'auto',
+                  width: 'fit-content',
+                  textTransform: 'none',
+                  '&:hover': {
+                    backgroundColor: 'rgba(102, 217, 232, 0.1)',
+                    borderColor: '#66d9e8',
+                  },
+                }}
+              >
+                Download CV
+              </Button>
+            </a>
+          </div>
 
+          <div className="hero-image">
+            <img src="/img/el.png" alt="Elsa" />
+          </div>
         </div>
+
       </div>
 
       <div id="about">
