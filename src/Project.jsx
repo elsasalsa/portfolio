@@ -79,7 +79,7 @@ const projectData = [
   },
   {
     title: 'Store Product Catalog',
-    image: '/project/prodify.png',
+    image: '/project/product.png',
     link: 'https://github.com/elsasalsa/product-web-app/tree/master',
     description: 'Built using .NET Core Framework, this system displays categorized product data. Each category can have multiple products, and the system uses soft delete for product management.',
     description_id: 'Dibangun dengan .NET Core Framework, sistem ini menampilkan data produk yang dikategorikan. Setiap kategori dapat memiliki banyak produk, dan sistem menggunakan metode soft delete untuk pengelolaan produk.',
@@ -150,7 +150,7 @@ const Project = () => {
           paddingBottom: '20px',
         }}
       >
-        {projectData.map((project, index) => (
+        {[...projectData].reverse().map((project, index) => (
           <Card
             key={index}
             onClick={() => handleOpen(project)}
@@ -243,7 +243,6 @@ const Project = () => {
                   rel="noopener noreferrer"
                   sx={{ textTransform: 'none' }}
                 >
-                  View Details
                 </Button>
               </Box>
             </>
