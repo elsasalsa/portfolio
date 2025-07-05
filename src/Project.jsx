@@ -71,11 +71,18 @@ const projectData = [
     description_id: 'Situs profil perusahaan yang dibangun menggunakan React.js. Menyajikan informasi produk, layanan, dan identitas perusahaan. Dibuat saat bootcamp di DigiUp.',
   },
   {
-    title: 'Sales System for Cashiers',
+    title: 'Sales System for Cashiers (Admin Role)',
     image: '/project/kasir.png',
     link: 'https://github.com/elsasalsa/kasir-ukk.git',
-    description: 'A web-based sales system built with PHP Laravel and Flowbite UI. Features include admin and cashier roles, sales charts, member point system, and export to Excel and PDF.',
-    description_id: 'Sistem penjualan berbasis web yang dibangun dengan PHP Laravel dan Flowbite UI. Memiliki fitur peran admin dan kasir, grafik penjualan, sistem poin untuk member, serta ekspor data ke Excel dan PDF.',
+    description: 'A web-based sales system built with PHP Laravel and Flowbite UI for admin users. Features include managing users, viewing product sales percentages, exporting sales data to Excel, and downloading transaction reports as PDF.',
+    description_id: 'Sistem penjualan berbasis web yang dibangun menggunakan PHP Laravel dan Flowbite UI untuk peran admin. Fitur mencakup pengelolaan pengguna, melihat presentase penjualan produk, ekspor data penjualan ke Excel, dan unduhan bukti transaksi dalam format PDF.',
+  },
+  {
+    title: 'Sales System for Cashiers (Cashier Role)',
+    image: '/project/kasir2.png',
+    link: 'https://github.com/elsasalsa/kasir-ukk.git',
+    description: 'A web-based sales system built with PHP Laravel and Flowbite UI for cashiers. Allows viewing today’s total sales, adding transactions, managing members and points, and exporting sales data to Excel and transaction proof to PDF.',
+    description_id: 'Sistem penjualan berbasis web yang dibangun menggunakan PHP Laravel dan Flowbite UI untuk peran kasir. Memungkinkan melihat total penjualan hari ini, menambah transaksi, mengelola member dan sistem poin, serta ekspor data penjualan ke Excel dan bukti transaksi ke PDF.',
   },
   {
     title: 'Store Product Catalog',
@@ -83,6 +90,20 @@ const projectData = [
     link: 'https://github.com/elsasalsa/product-web-app/tree/master',
     description: 'Built using .NET Core Framework, this system displays categorized product data. Each category can have multiple products, and the system uses soft delete for product management.',
     description_id: 'Dibangun dengan .NET Core Framework, sistem ini menampilkan data produk yang dikategorikan. Setiap kategori dapat memiliki banyak produk, dan sistem menggunakan metode soft delete untuk pengelolaan produk.',
+  },
+  {
+    title: 'To Do List App - Admin Role',
+    image: '/project/todo-admin.png',
+    link: 'https://todolistify-ruby.vercel.app/',
+    description: 'An admin dashboard built with Next.js and TypeScript to monitor users and their task statuses (completed/not completed). Includes search and status filter features.',
+    description_id: 'Aplikasi dashboard admin yang dibuat menggunakan Next.js dan TypeScript untuk menampilkan nama-nama user beserta daftar pekerjaan dan statusnya (sudah/belum dikerjakan). Dilengkapi fitur pencarian dan filter berdasarkan status.',
+  },
+  {
+    title: 'To Do List App - User Role',
+    image: '/project/todo-user.png',
+    link: 'https://todolistify-ruby.vercel.app/',
+    description: 'A To Do List application built with Next.js and TypeScript. Allows users to view, add, update, and delete their tasks efficiently.',
+    description_id: 'Aplikasi To Do List yang dibuat menggunakan Next.js dan TypeScript. Bertujuan untuk menampilkan, menambah, mengubah, dan menghapus daftar pekerjaan yang harus dilakukan oleh user.',
   },
 ];
 

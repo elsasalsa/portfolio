@@ -71,8 +71,8 @@ function Home() {
             <h3>Frontend Developer</h3>
 
             <a
-              href="/CV - Elsa Salsa Bila.pdf"
-              download="CV - Elsa Salsa Bila.pdf"
+              href="/Elsa Salsa Bila - Frontend Developer.pdf"
+              download="Elsa Salsa Bila - Frontend Developer.pdf"
               style={{ textDecoration: 'none' }}
             >
               <Button

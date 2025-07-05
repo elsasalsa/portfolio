@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { Card, CardContent, Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import { useTheme, useMediaQuery } from '@mui/material';
 import "./css/about.css";
 
 const About = () => {
     const [selectedCard, setSelectedCard] = useState("about");
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     const handleCardChange = (card) => {
         setSelectedCard(card);
@@ -14,11 +18,14 @@ const About = () => {
     const logos = [
         { src: '/img/html.png', alt: 'HTML' },
         { src: '/img/css.png', alt: 'CSS' },
-        { src: '/img/js.png', alt: 'JavaScript' },
-        { src: '/img/php.png', alt: 'React' },
-        { src: '/img/react.png', alt: 'Node.js' },
+        { src: '/img/js.jpg', alt: 'JavaScript' },
+        { src: '/img/ts.jpg', alt: 'TypeScript' },
+        { src: '/img/php.png', alt: 'PHP' },
+        { src: '/img/laravel.png', alt: 'Laravel' },
+        { src: '/img/node.png', alt: 'Node.js' },
+        { src: '/img/react.png', alt: 'React.js' },
+        { src: '/img/next.png', alt: 'Next' },
         { src: '/img/tlwnd.png', alt: 'Python' },
-        { src: '/img/bootstrap.png', alt: 'PHP' },
         { src: '/img/figma.png', alt: 'PHP' },
         { src: '/img/github.png', alt: 'MySQL' },
     ];
@@ -128,9 +135,9 @@ const About = () => {
                         <Box
                             sx={{
                                 display: 'grid',
-                                gridTemplateColumns: 'repeat(3, 1fr)',
+                                gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
                                 columnGap: '20px',
-                                rowGap: '40px',
+                                rowGap: '60px',
                                 justifyItems: 'center',
                                 alignItems: 'center',
                                 marginTop: '10px',
@@ -140,22 +147,20 @@ const About = () => {
                                 <Box
                                     key={index}
                                     sx={{
-                                        width: 64,
-                                        height: 64,
+                                        width: 72,
+                                        height: 72,
                                         borderRadius: '12px',
                                         display: 'flex',
                                         justifyContent: 'center',
                                         alignItems: 'center',
-                                        padding: '8px',
                                     }}
                                 >
                                     <img
                                         src={logo.src}
                                         alt={logo.alt}
                                         style={{
-                                            width: '80px',
-                                            height: '80px',
-                                            objectFit: 'contain',
+                                            width: '76px',
+                                            height: '76px',
                                         }}
                                     />
                                 </Box>
