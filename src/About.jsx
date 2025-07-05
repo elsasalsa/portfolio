@@ -147,8 +147,8 @@ const About = () => {
                                 <Box
                                     key={index}
                                     sx={{
-                                        width: 72,
-                                        height: 72,
+                                        width: 48,
+                                        height: 48,
                                         borderRadius: '12px',
                                         display: 'flex',
                                         justifyContent: 'center',
@@ -178,7 +178,7 @@ const cardStyle = {
     border: '1px solid rgba(255, 255, 255, 0.2)',
     color: 'white',
     padding: '70px 50px 40px 50px',
-    maxWidth: '875px',
+    maxWidth: '825px',
     margin: '0 auto',
     borderRadius: '12px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
