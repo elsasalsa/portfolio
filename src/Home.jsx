@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-scroll';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import About from './About';
 import Project from './Project';
@@ -98,9 +99,12 @@ function Home() {
             </a>
           </div>
 
-          <div className="hero-image">
+          <Box
+            className="hero-image"
+            sx={{ display: { xs: 'none', md: 'block' } }}
+          >
             <img src="/img/el.png" alt="Elsa" />
-          </div>
+          </Box>
         </div>
 
       </div>
