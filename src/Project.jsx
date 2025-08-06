@@ -9,27 +9,31 @@ import './css/project.css';
 const projectData = [
   {
     title: 'Masjid Project',
+    title_id: 'Proyek Masjid',
     image: '/project/masjid.png',
-    link: 'https://github.com/elsasalsa/webmasjid.git',
+    link: 'https://github.com/elsasalsa/webmasjid',
     description: 'This website was built using PHP Laravel to support mosque development donations. All donation data is recorded and managed by the system.',
     description_id: 'Website ini dibangun menggunakan PHP Laravel untuk mendukung donasi pembangunan masjid. Semua data donasi tercatat dan dikelola oleh sistem.',
   },
   {
     title: 'Simple Pharmacy Project',
+    title_id: 'Proyek Apotek Sederhana',
     image: '/project/apotek.png',
-    link: 'https://github.com/elsasalsa/apoteker-app.git',
+    link: 'https://github.com/elsasalsa/apoteker-app',
     description: 'Built with PHP Laravel and Bootstrap, this system includes two roles: admin and cashier. It manages medicine data, checkout system, and includes Excel and PDF export features.',
     description_id: 'Dibangun dengan PHP Laravel dan Bootstrap, sistem ini memiliki dua peran yaitu admin dan kasir. Sistem ini mengelola data obat, sistem checkout, dan memiliki fitur ekspor ke Excel dan PDF.',
   },
   {
     title: 'Late Attendance Project',
+    title_id: 'Proyek Keterlambatan Siswa',
     image: '/project/telat.png',
-    link: 'https://github.com/elsasalsa/web-keterlambatan.git',
+    link: 'https://github.com/elsasalsa/web-keterlambatan',
     description: 'A system to record student late attendance, built with PHP, Laravel, and Bootstrap. Includes photo capture, three user roles (admin, student, counselor), and export to Excel and PDF.',
     description_id: 'Sistem untuk mencatat keterlambatan siswa, dibangun menggunakan PHP, Laravel, dan Bootstrap. Menyediakan fitur unggah foto, tiga peran pengguna (admin, siswa, pembimbing), dan ekspor data ke Excel dan PDF.',
   },
   {
     title: 'Portfolio Project',
+    title_id: 'Proyek Portofolio',
     image: '/project/porto.png',
     link: 'https://elcvport.netlify.app',
     description: 'A personal portfolio website built using HTML, CSS, Bootstrap, and a bit of JavaScript. Displays projects and information in a neat and clear layout.',
@@ -37,13 +41,15 @@ const projectData = [
   },
   {
     title: 'Simple Restaurant Project',
+    title_id: 'Proyek Rumah Makan Sederhana',
     image: '/project/rm.png',
-    link: 'https://github.com/elsasalsa/project-rumahmakan.git',
+    link: 'https://github.com/elsasalsa/project-rumahmakan',
     description: 'A landing page for a restaurant built using PHP Laravel and React-Bootstrap. It showcases food and drink menus.',
     description_id: 'Sebuah landing page rumah makan yang dibangun menggunakan PHP Laravel dan React-Bootstrap. Menampilkan daftar menu makanan dan minuman.',
   },
   {
     title: 'Sivina Retail Project',
+    title_id: 'Proyek Retail Sivina',
     image: '/project/sivina2.png',
     link: '/error',
     description: 'An internship project built using React.js (frontend) and Python (backend). This system manages store and product data across Indonesia with filters by region and a map view for store locations.',
@@ -51,6 +57,7 @@ const projectData = [
   },
   {
     title: 'Ciliwung Watershed Monitoring Project',
+    title_id: 'Proyek Pemantauan DAS Ciliwung',
     image: '/project/das.png',
     link: 'https://github.com/aryantiraihana/flood-monitoring-client/tree/master',
     description: 'A part-time project using React.js (frontend) and Python (backend) to monitor flood-prone areas in Jakarta. It displays flood levels and affected locations.',
@@ -58,13 +65,15 @@ const projectData = [
   },
   {
     title: 'Portfolio Project',
+    title_id: 'Proyek Portofolio Pribadi',
     image: '/project/profile.png',
-    link: 'https://github.com/elsasalsa/profile-app.git',
+    link: 'https://github.com/elsasalsa/profile-app',
     description: 'A personal portfolio project built using React.js. Created during my web development bootcamp at Telkom DigiUp.',
     description_id: 'Proyek portofolio pribadi yang dibangun menggunakan React.js. Dibuat saat mengikuti bootcamp web development di Telkom DigiUp.',
   },
   {
     title: 'Company Profile Project',
+    title_id: 'Proyek Profil Perusahaan',
     image: '/project/codevo.png',
     link: 'https://codevocompany.netlify.app',
     description: 'A company profile site built with React.js. It presents products, services, and company identity. Developed during my bootcamp at DigiUp.',
@@ -72,20 +81,23 @@ const projectData = [
   },
   {
     title: 'Sales System for Cashiers (Admin Role)',
+    title_id: 'Sistem Penjualan Kasir (Peran Admin)',
     image: '/project/kasir.png',
-    link: 'https://github.com/elsasalsa/kasir-ukk.git',
+    link: 'https://github.com/elsasalsa/kasir-ukk',
     description: 'A web-based sales system built with PHP Laravel and Flowbite UI for admin users. Features include managing users, viewing product sales percentages, exporting sales data to Excel, and downloading transaction reports as PDF.',
     description_id: 'Sistem penjualan berbasis web yang dibangun menggunakan PHP Laravel dan Flowbite UI untuk peran admin. Fitur mencakup pengelolaan pengguna, melihat presentase penjualan produk, ekspor data penjualan ke Excel, dan unduhan bukti transaksi dalam format PDF.',
   },
   {
     title: 'Sales System for Cashiers (Cashier Role)',
+    title_id: 'Sistem Penjualan Kasir (Peran Kasir)',
     image: '/project/kasir2.png',
-    link: 'https://github.com/elsasalsa/kasir-ukk.git',
+    link: 'https://github.com/elsasalsa/kasir-ukk',
     description: 'A web-based sales system built with PHP Laravel and Flowbite UI for cashiers. Allows viewing today’s total sales, adding transactions, managing members and points, and exporting sales data to Excel and transaction proof to PDF.',
     description_id: 'Sistem penjualan berbasis web yang dibangun menggunakan PHP Laravel dan Flowbite UI untuk peran kasir. Memungkinkan melihat total penjualan hari ini, menambah transaksi, mengelola member dan sistem poin, serta ekspor data penjualan ke Excel dan bukti transaksi ke PDF.',
   },
   {
     title: 'Store Product Catalog',
+    title_id: 'Katalog Produk Toko',
     image: '/project/product.png',
     link: 'https://github.com/elsasalsa/product-web-app/tree/master',
     description: 'Built using .NET Core Framework, this system displays categorized product data. Each category can have multiple products, and the system uses soft delete for product management.',
@@ -93,6 +105,7 @@ const projectData = [
   },
   {
     title: 'To Do List App - Admin Role',
+    title_id: 'Aplikasi To Do List - Peran Admin',
     image: '/project/todo-admin.png',
     link: 'https://todolistify-ruby.vercel.app/',
     description: 'An admin dashboard built with Next.js and TypeScript to monitor users and their task statuses (completed/not completed). Includes search and status filter features.',
@@ -100,13 +113,21 @@ const projectData = [
   },
   {
     title: 'To Do List App - User Role',
+    title_id: 'Aplikasi To Do List - Peran Pengguna',
     image: '/project/todo-user.png',
     link: 'https://todolistify-ruby.vercel.app/',
     description: 'A To Do List application built with Next.js and TypeScript. Allows users to view, add, update, and delete their tasks efficiently.',
     description_id: 'Aplikasi To Do List yang dibuat menggunakan Next.js dan TypeScript. Bertujuan untuk menampilkan, menambah, mengubah, dan menghapus daftar pekerjaan yang harus dilakukan oleh user.',
   },
+  {
+    title: 'News Board',
+    title_id: 'Papan Berita',
+    image: '/project/news.png',
+    link: 'https://github.com/elsasalsa/news-board',
+    description: 'A News Board application built with React.js, TypeScript, Vite, and Ant Design. Displays news from around the world with category-based filtering.',
+    description_id: 'Aplikasi News Board yang dibuat menggunakan React.js, TypeScript, Vite, dan Ant Design. Menampilkan berita dari seluruh dunia serta dilengkapi dengan filter berdasarkan kategori.',
+  }
 ];
-
 
 const Project = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -159,6 +180,18 @@ const Project = () => {
     <div className="project-container">
       <h1 className="project-heading">What I’ve Built</h1>
       <div className="project-underline" />
+
+      <Typography
+        variant="body2"
+        align="center"
+        sx={{
+          mb: 2,
+          color: '#b0bec5',
+          textShadow: '0px 1px 6px rgba(206, 206, 233, 0.5)',
+        }}
+      >
+        ← Swipe to view more projects →
+      </Typography>
 
       <div
         className="project-cards-wrapper"
@@ -218,7 +251,6 @@ const Project = () => {
         >
           {selectedProject && (
             <>
-              {/* Tombol Close */}
               <IconButton
                 onClick={handleClose}
                 sx={{
@@ -232,13 +264,15 @@ const Project = () => {
               </IconButton>
 
               <Typography variant="h6" fontWeight="bold" gutterBottom color="text.primary">
-                {selectedProject.title}
+                {language === 'en'
+                  ? selectedProject.title
+                  : selectedProject.title_id || selectedProject.title}
               </Typography>
 
               <Typography variant="body1" sx={{ mb: 2 }} color="text.secondary">
                 {language === 'en'
                   ? selectedProject.description
-                  : selectedProject.description_id || 'Terjemahan belum tersedia.'}
+                  : selectedProject.description_id || selectedProject.description}
               </Typography>
 
               <Box display="flex" justifyContent="space-between" alignItems="center">

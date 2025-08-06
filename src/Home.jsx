@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-scroll';
+import { Menu, MenuItem } from '@mui/material';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import About from './About';
@@ -13,6 +15,17 @@ import './css/home.css';
 function Home() {
   const navigate = useNavigate();
   const [navbarBg, setNavbarBg] = useState(false);
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,32 +84,86 @@ function Home() {
             <h1>Hi I am Elsa!</h1>
             <h3>Frontend Developer</h3>
 
-            <a
-              href="/Elsa Salsa Bila - Frontend Developer.pdf"
-              download="Elsa Salsa Bila - Frontend Developer.pdf"
-              style={{ textDecoration: 'none' }}
-            >
-              <Button
-                variant="outlined"
-                sx={{
-                  color: '#66d9e8',
+            <Button
+              variant="outlined"
+              onClick={handleClick}
+              endIcon={<ArrowDropDownIcon />}
+              sx={{
+                color: '#66d9e8',
+                borderColor: '#66d9e8',
+                fontSize: '0.85rem',
+                paddingY: '8px',
+                paddingX: '16px',
+                borderRadius: '50px',
+                minWidth: 'auto',
+                width: 'fit-content',
+                textTransform: 'none',
+                '&:hover': {
+                  backgroundColor: 'rgba(102, 217, 232, 0.1)',
                   borderColor: '#66d9e8',
-                  fontSize: '0.85rem',
-                  paddingY: '8px',
-                  paddingX: '16px',
-                  borderRadius: '50px',
-                  minWidth: 'auto',
-                  width: 'fit-content',
-                  textTransform: 'none',
+                },
+              }}
+            >
+              View Documents
+            </Button>
+
+            <Menu
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              PaperProps={{
+                sx: {
+                  backgroundColor: '#1e1e2f',
+                  color: '#ffffff',
+                  borderRadius: 2,
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+                  mt: 1,
+                },
+              }}
+            >
+              <MenuItem
+                onClick={handleClose}
+                component="a"
+                href="/Elsa Salsa Bila - CV.pdf"
+                download
+                sx={{
                   '&:hover': {
                     backgroundColor: 'rgba(102, 217, 232, 0.1)',
-                    borderColor: '#66d9e8',
+                    color: '#66d9e8',
                   },
                 }}
               >
-                Download CV
-              </Button>
-            </a>
+                CV
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                component="a"
+                href="/Elsa Salsa Bila - Portofolio.pdf"
+                download
+                sx={{
+                  '&:hover': {
+                    backgroundColor: 'rgba(102, 217, 232, 0.1)',
+                    color: '#66d9e8',
+                  },
+                }}
+              >
+                Portfolio
+              </MenuItem>
+              <MenuItem
+                onClick={handleClose}
+                component="a"
+                href="/Elsa Salsa Bila - SRK.pdf"
+                download
+                sx={{
+                  '&:hover': {
+                    backgroundColor: 'rgba(102, 217, 232, 0.1)',
+                    color: '#66d9e8',
+                  },
+                }}
+              >
+                Recommendation Letter
+              </MenuItem>
+            </Menu>
           </div>
 
           <Box
