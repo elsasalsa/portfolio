@@ -161,7 +161,7 @@ function Home() {
                   },
                 }}
               >
-                Recommendation Letter
+                Reference Letter
               </MenuItem>
             </Menu>
           </div>
