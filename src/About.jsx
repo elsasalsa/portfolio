@@ -60,8 +60,8 @@ const About = () => {
                         Skills
                     </Button>
                     <Button
-                        onClick={() => handleCardChange("cv")}
-                        sx={buttonStyle("cv", selectedCard)}
+                        onClick={() => handleCardChange("journey")}
+                        sx={buttonStyle("journey", selectedCard)}
                     >
                         Journey
                     </Button>
@@ -81,7 +81,7 @@ const About = () => {
                 </Card>
             )}
 
-            {selectedCard === "cv" && (
+            {selectedCard === "journey" && (
                 <Card variant="outlined" sx={cardStyle}>
                     <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
                         <Box sx={{ flex: '1 1 45%' }}>
@@ -125,12 +125,6 @@ const About = () => {
 
             {selectedCard === "skills" && (
                 <Card variant="outlined" sx={cardStyle}>
-                    {/* <Typography style={{ wordSpacing: '3px', fontSize: '1.2rem', marginBottom: '25px' }}>
-                        Let's see my CV!
-                    </Typography>
-                    <a href="/Elsa Salsa Bila_CV.pdf" download>
-                        <Button variant="contained">Click Here</Button>
-                    </a> */}
                     <CardContent>
                         <Box
                             sx={{
@@ -185,11 +179,11 @@ const cardStyle = {
 };
 
 const buttonStyle = (btnType, selected) => ({
-    borderRadius: btnType === 'about' ? '50px 0 0 50px' : btnType === 'cv' ? '0 50px 50px 0' : 0,
+    borderRadius: btnType === 'about' ? '50px 0 0 50px' : btnType === 'journey' ? '0 50px 50px 0' : 0,
     color: selected === btnType ? '#66d9e8' : 'white',
     textTransform: 'none',
     borderColor: 'rgba(255, 255, 255, 0.3)',
-    borderRight: btnType !== 'cv' ? '1px solid rgba(255, 255, 255, 0.3)' : 'none',
+    borderRight: btnType !== 'journey' ? '1px solid rgba(255, 255, 255, 0.3)' : 'none',
     px: 3,
     backgroundColor: selected === btnType ? 'rgba(102, 217, 232, 0.15)' : 'transparent',
     '&:hover': {

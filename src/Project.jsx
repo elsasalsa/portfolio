@@ -185,7 +185,7 @@ const Project = () => {
         variant="body2"
         align="center"
         sx={{
-          mb: 2,
+          mb: 3,
           color: '#b0bec5',
           textShadow: '0px 1px 6px rgba(206, 206, 233, 0.5)',
         }}
