@@ -126,7 +126,15 @@ const projectData = [
     link: 'https://github.com/elsasalsa/news-board',
     description: 'A News Board application built with React.js, TypeScript, Vite, and Ant Design. Displays news from around the world with category-based filtering.',
     description_id: 'Aplikasi News Board yang dibuat menggunakan React.js, TypeScript, Vite, dan Ant Design. Menampilkan berita dari seluruh dunia serta dilengkapi dengan filter berdasarkan kategori.',
-  }
+  },
+  {
+    title: 'Edvanta',
+    title_id: 'Edvanta',
+    image: '/project/edvanta.png',
+    link: 'https://revou-coding-camp.github.io/codingcamp-11-aug-25-elsasalsa/',
+    description: 'Simple Company profile website built with Vue.js and Tailwind CSS during the RevoU Software Engineering bootcamp. It includes a personalized greeting, responsive design, and an interactive contact form to enhance user experience.',
+    description_id: 'Website company profile sederhana yang dibuat menggunakan Vue.js dan Tailwind CSS saat mengikuti bootcamp Software Engineering di RevoU. Website ini memiliki fitur greeting personal, desain responsif, serta form interaktif untuk meningkatkan pengalaman pengguna.',
+  },
 ];
 
 const Project = () => {

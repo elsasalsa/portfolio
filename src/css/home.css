@@ -89,4 +89,16 @@ body {
   .hero-image img {
     max-width: 80%;
   }
+
+  .hero-text h1 {
+    line-height: 1.4;
+  }
+
+  .hero-text h3 {
+    line-height: 1.6;
+  }
+
+  .hero-text h6 {
+    line-height: 1.8;
+  }
 }

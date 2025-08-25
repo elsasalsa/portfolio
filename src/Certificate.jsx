@@ -16,64 +16,52 @@ const Certificate = () => {
 
   const certificates = [
     {
-      title: 'Typing Mastery',
       image: '/cert/literasi.jpg',
       description: 'Participate in a seminar on literacy wisely using social media',
     },
     {
-      title: 'Web Development',
       image: '/cert/k3.jpg',
       description: 'Complete e-learning regarding occupational health and safety',
     },
     {
-      title: 'JavaScript Fundamentals',
       image: '/cert/ldk.png',
       description: 'Student Leadership Basic Training Participants',
     },
     {
-      title: 'Database Management',
-      image: '/cert/dasar-pem.jpg',
-      description: 'Take basic programming classes to become a software developer',
-    },
-    {
-      title: 'UI/UX Design',
       image: '/cert/meniti.jpg',
-      description: 'Take classes to build a career as a software developer',
+      description: 'Take classes to build a career as a Software Developer',
     },
     {
-      title: 'Cybersecurity Basics',
+      image: '/cert/dasar-pem.jpg',
+      description: 'Take basic programming classes to become a Software Developer',
+    },
+    {
       image: '/cert/dasar-github.jpg',
-      description: 'Learn git basics with github',
+      description: 'Learn git basics with GitHub',
     },
     {
-      title: 'Python Programming',
-      image: '/cert/cyberlabs.jpg',
-      description: 'Industrial class to learn backend science with javascript framework',
-    },
-    {
-      title: 'Git & GitHub',
       image: '/cert/vue.jpg',
-      description: 'Industrial class to learn frontend science using vue js',
+      description: 'Industrial class to learn Frontend science using Vue JS',
     },
     {
-      title: 'Networking Essentials',
+      image: '/cert/cyberlabs.jpg',
+      description: 'Industrial class to learn Backend science with JavaScript framework',
+    },
+    {
       image: '/cert/ratatype.jpg',
       description: 'Practice fast typing with pinpoint accuracy',
     },
     {
-      title: 'Mobile App Development',
       image: '/cert/igdx.jpg',
-      description: 'Participate in seminar activities for prospective game developers',
+      description: 'Participate in seminar activities for prospective Game Developers',
     },
     {
-      title: 'Cloud Computing',
       image: '/cert/job-shadow.jpg',
       description: 'Participate in a program to understand the profession',
     },
     {
-      title: 'Agile Project Management',
       image: '/cert/dea.jpg',
-      description: 'Complete basic digital marketing training',
+      description: 'Complete basic Digital Marketing training',
     },
   ];
 
@@ -117,7 +105,6 @@ const Certificate = () => {
                 component="img"
                 height="200"
                 image={cert.image}
-                alt={cert.title}
               />
               <CardContent>
                 <Typography
