@@ -57,7 +57,7 @@ function Home() {
         }}
       >
         <Container>
-          <Navbar.Brand href="/">MyPortfolio</Navbar.Brand>
+          <Navbar.Brand href="/">Elsa’s Journey</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="custom-nav">
