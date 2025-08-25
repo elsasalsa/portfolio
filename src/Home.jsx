@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { Menu, MenuItem } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import About from './About';
@@ -81,40 +82,44 @@ function Home() {
         <div className="hero-section">
           <div className="hero-text">
             <h6 className="side-line">Welcome to my portfolio</h6>
-            <h1>Hi I am Elsa!</h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              Hi, I am Elsa!
+            </motion.h1>
             <h3>Frontend Developer</h3>
 
             <Link
-  to="about"
-  spy={true}
-  smooth={true}
-  offset={-70}
-  duration={500}
->
-  <Button
-    variant="outlined"
-    endIcon={<ExpandMoreIcon />}
-    sx={{
-      color: '#66d9e8',
-      borderColor: '#66d9e8',
-      fontSize: '0.85rem',
-      paddingY: '8px',
-      paddingX: '16px',
-      borderRadius: '50px',
-      minWidth: 'auto',
-      width: 'fit-content',
-      textTransform: 'none',
-      '&:hover': {
-        backgroundColor: 'rgba(102, 217, 232, 0.1)',
-        borderColor: '#66d9e8',
-      },
-    }}
-  >
-    Explore My Journey
-  </Button>
-</Link>
-
-
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >
+              <Button
+                variant="outlined"
+                endIcon={<KeyboardDoubleArrowDownIcon />}
+                sx={{
+                  color: '#66d9e8',
+                  borderColor: '#66d9e8',
+                  fontSize: '0.85rem',
+                  paddingY: '8px',
+                  paddingX: '16px',
+                  borderRadius: '50px',
+                  minWidth: 'auto',
+                  width: 'fit-content',
+                  textTransform: 'none',
+                  '&:hover': {
+                    backgroundColor: 'rgba(102, 217, 232, 0.1)',
+                    borderColor: '#66d9e8',
+                  },
+                }}
+              >
+                Explore My Journey
+              </Button>
+            </Link>
 
             <Menu
               anchorEl={anchorEl}
