@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import DownloadIcon from '@mui/icons-material/Download';
 import { useTheme, useMediaQuery } from '@mui/material';
 import "./css/about.css";
 
@@ -60,66 +61,24 @@ const About = () => {
                         Skills
                     </Button>
                     <Button
-                        onClick={() => handleCardChange("journey")}
-                        sx={buttonStyle("journey", selectedCard)}
+                        onClick={() => handleCardChange("showcase")}
+                        sx={buttonStyle("showcase", selectedCard)}
                     >
-                        Journey
+                        Showcase
                     </Button>
                 </ButtonGroup>
             </div>
 
             {selectedCard === "about" && (
                 <Card variant="outlined" sx={cardStyle}>
-                    <Typography style={{ wordSpacing: '3px', fontSize: '1.1rem', marginBottom: '20px' }}>
-                        Hi! My name is <b>Elsa Salsa Bila</b>. I’m a Frontend Developer and a graduate of Wikrama Bogor
-                        Vocational High School, majoring in Software and Game Development. I have a strong passion
-                        and skill set in front-end development, and I’m committed to continuous learning and growth
-                        in the world of technology. I also gained valuable hands-on experience during a six-month
-                        internship as a Frontend Developer, where I honed my skills in building responsive and
-                        user-friendly web interfaces.
+                    <Typography style={{ wordSpacing: '3px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                        Hi! My name is <b>Elsa Salsa Bila</b>. I’m a Frontend Developer and a proud graduate of Wikrama Bogor 
+                        Vocational High School, specializing in Software and Game Development. With a strong passion for 
+                        creating intuitive and engaging digital experiences, I’m dedicated to continuous learning and 
+                        growth in the ever-evolving world of technology. My six-month internship as a Frontend Developer 
+                        allowed me to gain hands-on experience in building responsive, user-friendly interfaces, which 
+                        strengthened both my technical expertise and my ability to bring creative ideas to life.
                     </Typography>
-                </Card>
-            )}
-
-            {selectedCard === "journey" && (
-                <Card variant="outlined" sx={cardStyle}>
-                    <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                        <Box sx={{ flex: '1 1 45%' }}>
-                            <Typography sx={{ fontSize: '1.1rem', textAlign: 'left', lineHeight: '1.4' }}>
-                                <p style={{ fontSize: '0.9rem', color: 'white', marginBottom: '5px' }}>Frontend Developer</p>
-                                <p style={{ fontSize: '0.9rem', color: '#4a5568' }}><i>Wikrama Vocational High School</i></p>
-                                <ul style={{ fontSize: '0.8rem', marginTop: '5px', paddingLeft: '20px' }}>
-                                    <li>Personal Web using HTML, CSS</li>
-                                    <li>Profile Website using React JS</li>
-                                    <li>Flood Detector Website in the Jakarta area</li>
-                                </ul>
-                                <hr style={{ width: "80%", margin: '1rem 0' }} />
-                            </Typography>
-
-                            <Typography sx={{ fontSize: '1.1rem', textAlign: 'left', lineHeight: '1.4' }}>
-                                <p style={{ fontSize: '0.9rem', color: 'white', marginBottom: '5px' }}>Frontend Developer</p>
-                                <p style={{ fontSize: '0.9rem', color: '#4a5568' }}><i>Starcore Analytics</i></p>
-                                <ul style={{ fontSize: '0.8rem', marginTop: '5px', paddingLeft: '20px' }}>
-                                    <li>Developing a corporate retail website to manage data</li>
-                                    <li>Testing to improve the quality of web applications</li>
-                                </ul>
-                            </Typography>
-                        </Box>
-
-                        <Box sx={{ flex: '1 1 45%' }}>
-                            <Typography sx={{ fontSize: '1.1rem', textAlign: 'left', lineHeight: '1.4' }}>
-                                <p style={{ fontSize: '0.9rem', color: 'white', marginBottom: '5px' }}>Fullstack Developer</p>
-                                <p style={{ fontSize: '0.9rem', color: '#4a5568' }}><i>Wikrama Vocational High School</i></p>
-                                <ul style={{ fontSize: '0.8rem', marginTop: '5px', paddingLeft: '20px' }}>
-                                    <li>Charity website for school mosque</li>
-                                    <li>Simple pharmacy website</li>
-                                    <li>Delay Website for Students at School</li>
-                                    <li>Shopping website for cashier</li>
-                                </ul>
-                                <hr style={{ width: "80%", margin: '1rem 0' }} />
-                            </Typography>
-                        </Box>
-                    </Box>
                 </Card>
             )}
 
@@ -163,6 +122,57 @@ const About = () => {
                     </CardContent>
                 </Card>
             )}
+
+            {selectedCard === "showcase" && (
+                <Card variant="outlined" sx={cardStyle}>
+                    <CardContent sx={{ padding: 0 }}>
+                        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                            {[
+                                { title: "Curriculum Vitae", desc: "A concise resume of career journey and experiences.", file: "/Elsa Salsa Bila - CV.pdf" },
+                                { title: "Portfolio", desc: "A collection of highlighted projects and creative works.", file: "/Elsa Salsa Bila - Portofolio.pdf" },
+                                { title: "Reference Letter", desc: "Recommendation and work reference letters.", file: "/Elsa Salsa Bila - SRK.pdf" },
+                            ].map((doc, index) => (
+                                <Box
+                                    key={index}
+                                    component="a"
+                                    href={doc.file}
+                                    download
+                                    sx={{
+                                        textDecoration: 'none',
+                                        px: 2,
+                                        py: 1.5,
+                                        borderRadius: '12px',
+                                        backgroundColor: 'rgba(255,255,255,0.05)',
+                                        border: '1px solid rgba(255,255,255,0.15)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                        color: 'white',
+                                        transition: 'all 0.3s ease',
+                                        '&:hover': {
+                                            backgroundColor: 'rgba(102, 217, 232, 0.15)',
+                                            borderColor: '#66d9e8',
+                                            transform: 'translateY(-3px)',
+                                        }
+                                    }}
+                                >
+                                    <Box sx={{ textAlign: 'left' }}>
+                                        <Typography sx={{ fontWeight: '600', fontSize: '1rem' }}>
+                                            {doc.title}
+                                        </Typography>
+                                        <Typography sx={{ fontSize: '0.85rem', color: '#a0aec0' }}>
+                                            {doc.desc}
+                                        </Typography>
+                                    </Box>
+
+                                    <DownloadIcon sx={{ fontSize: '1.5rem', color: '#66d9e8' }} />
+                                </Box>
+                            ))}
+                        </Box>
+                    </CardContent>
+                </Card>
+            )}
+
         </div>
     );
 };
@@ -179,11 +189,11 @@ const cardStyle = {
 };
 
 const buttonStyle = (btnType, selected) => ({
-    borderRadius: btnType === 'about' ? '50px 0 0 50px' : btnType === 'journey' ? '0 50px 50px 0' : 0,
+    borderRadius: btnType === 'about' ? '50px 0 0 50px' : btnType === 'showcase' ? '0 50px 50px 0' : 0,
     color: selected === btnType ? '#66d9e8' : 'white',
     textTransform: 'none',
     borderColor: 'rgba(255, 255, 255, 0.3)',
-    borderRight: btnType !== 'journey' ? '1px solid rgba(255, 255, 255, 0.3)' : 'none',
+    borderRight: btnType !== 'showcase' ? '1px solid rgba(255, 255, 255, 0.3)' : 'none',
     px: 3,
     backgroundColor: selected === btnType ? 'rgba(102, 217, 232, 0.15)' : 'transparent',
     '&:hover': {

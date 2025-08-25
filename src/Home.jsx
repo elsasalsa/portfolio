@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { Menu, MenuItem } from '@mui/material';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import About from './About';
@@ -84,28 +84,37 @@ function Home() {
             <h1>Hi I am Elsa!</h1>
             <h3>Frontend Developer</h3>
 
-            <Button
-              variant="outlined"
-              onClick={handleClick}
-              endIcon={<ArrowDropDownIcon />}
-              sx={{
-                color: '#66d9e8',
-                borderColor: '#66d9e8',
-                fontSize: '0.85rem',
-                paddingY: '8px',
-                paddingX: '16px',
-                borderRadius: '50px',
-                minWidth: 'auto',
-                width: 'fit-content',
-                textTransform: 'none',
-                '&:hover': {
-                  backgroundColor: 'rgba(102, 217, 232, 0.1)',
-                  borderColor: '#66d9e8',
-                },
-              }}
-            >
-              View Documents
-            </Button>
+            <Link
+  to="about"
+  spy={true}
+  smooth={true}
+  offset={-70}
+  duration={500}
+>
+  <Button
+    variant="outlined"
+    endIcon={<ExpandMoreIcon />}
+    sx={{
+      color: '#66d9e8',
+      borderColor: '#66d9e8',
+      fontSize: '0.85rem',
+      paddingY: '8px',
+      paddingX: '16px',
+      borderRadius: '50px',
+      minWidth: 'auto',
+      width: 'fit-content',
+      textTransform: 'none',
+      '&:hover': {
+        backgroundColor: 'rgba(102, 217, 232, 0.1)',
+        borderColor: '#66d9e8',
+      },
+    }}
+  >
+    Explore My Journey
+  </Button>
+</Link>
+
+
 
             <Menu
               anchorEl={anchorEl}
