@@ -80,9 +80,18 @@ body {
   min-width: 300px;
 }
 
+@media (max-width: 991px) {
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
+
 @media (max-width: 768px) {
   .hero-section {
     padding-left: 30px;
+    padding-right: 30px;
   }
 
   .hero-image img {

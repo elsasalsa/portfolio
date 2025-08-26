@@ -27,7 +27,6 @@ function Home() {
     setAnchorEl(null);
   };
 
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -48,8 +47,8 @@ function Home() {
         variant="dark"
         fixed="top"
         style={{
-          paddingTop: '20px',
-          paddingBottom: '20px',
+          paddingTop: '15px',
+          paddingBottom: '15px',
           backgroundColor: navbarBg ? 'rgba(36, 36, 62, 0.7)' : 'transparent',
           transition: 'background-color 0.3s ease',
           backdropFilter: navbarBg ? 'blur(6px)' : 'none',
@@ -57,7 +56,20 @@ function Home() {
         }}
       >
         <Container>
-          <Navbar.Brand href="/">Elsa’s Journey</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img
+              src="/img/el2.png" 
+              alt="Elsa’s Journey"
+              style={{
+                width: '45px',
+                height: '45px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '2px solid #66d9e8',
+              }}
+            />
+          </Navbar.Brand>
+
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="custom-nav">
