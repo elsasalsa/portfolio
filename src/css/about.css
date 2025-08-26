@@ -6,11 +6,11 @@
   .about-heading {
     color: white;
     font-size: 2.5rem;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
-  .underline {
-    width: 80px;
+  .about-underline {
+    width: 120px;
     height: 3px;
     background-color: #66d9e8;
     margin: 0 auto 30px;

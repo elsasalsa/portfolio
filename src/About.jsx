@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import DownloadIcon from '@mui/icons-material/Download';
 import { useTheme, useMediaQuery } from '@mui/material';
+import { motion } from "framer-motion";
 import "./css/about.css";
 
 const About = () => {
@@ -33,8 +34,23 @@ const About = () => {
 
     return (
         <div className="about-container">
-            <h1 className="about-heading">Who I Am</h1>
-            <div className="underline" />
+            <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: false }}
+                  >
+                    <h1 className="about-heading">Who I Am</h1>
+                  </motion.div>
+            
+                  <motion.div
+                    className="about-underline"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    viewport={{ once: false }}
+                    style={{ transformOrigin: "left" }}
+                  />
 
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '-20px', zIndex: 1, position: 'relative' }}>
                 <ButtonGroup

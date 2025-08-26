@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import TranslateIcon from '@mui/icons-material/Translate';
+import { motion } from "framer-motion";
 import './css/project.css';
 
 const projectData = [
@@ -186,8 +187,23 @@ const Project = () => {
 
   return (
     <div className="project-container">
-      <h1 className="project-heading">What I’ve Built</h1>
-      <div className="project-underline" />
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false }}
+      >
+        <h1 className="project-heading">What I've Built</h1>
+      </motion.div>
+
+      <motion.div
+        className="project-underline"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        viewport={{ once: false }}
+        style={{ transformOrigin: "left" }}
+      />
 
       <Typography
         variant="body2"

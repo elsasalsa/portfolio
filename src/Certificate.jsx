@@ -1,4 +1,5 @@
 import React from 'react';
+import { useMediaQuery } from '@mui/material';
 import './css/cert.css';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -14,6 +15,8 @@ import { motion } from "framer-motion";
 const Certificate = () => {
   const [open, setOpen] = React.useState(false);
   const [selectedImage, setSelectedImage] = React.useState('');
+
+  const isMobile = useMediaQuery('(max-width:768px)');
 
   const certificates = [
     { image: '/cert/literasi.jpg', description: 'Participate in a seminar on literacy wisely using social media' },
@@ -40,23 +43,27 @@ const Certificate = () => {
     setSelectedImage('');
   };
 
+  const Wrapper = isMobile ? React.Fragment : motion.div;
+
   return (
-    <motion.div
+    <Wrapper
       className='cert-container'
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: false, amount: 0.2 }}
+      style={{ Bottom: '50px' }}
+      {...(!isMobile && {
+        initial: { opacity: 0 },
+        whileInView: { opacity: 1 },
+        transition: { duration: 0.8 },
+        viewport: { once: false, amount: 0.2 }
+      })}
     >
-      <motion.h1
-        className="cert-heading"
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false }}
       >
-        What I've Achieved
-      </motion.h1>
+        <h1 className="cert-heading">What I've Achieved</h1>
+      </motion.div>
 
       <motion.div
         className="cert-underline"
@@ -69,12 +76,14 @@ const Certificate = () => {
 
       <div className="cert-grid">
         {certificates.map((cert, idx) => (
-          <motion.div
+          <Wrapper
             key={idx}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: idx * 0.05 }} 
-            viewport={{ once: false, amount: 0.2 }}
+            {...(!isMobile && {
+              initial: { opacity: 0, y: 50 },
+              whileInView: { opacity: 1, y: 0 },
+              transition: { duration: 0.5, delay: idx * 0.05 },
+              viewport: { once: false, amount: 0.2 }
+            })}
           >
             <Card
               sx={{
@@ -101,7 +110,8 @@ const Certificate = () => {
                     sx={{
                       color: '#fff',
                       fontWeight: 500,
-                      textShadow: '0px 1px 3px rgba(0,0,0,0.5)'
+                      textShadow: '0px 1px 3px rgba(0,0,0,0.5)',
+                      textAlign: 'center'
                     }}
                   >
                     {cert.description}
@@ -109,7 +119,7 @@ const Certificate = () => {
                 </CardContent>
               </CardActionArea>
             </Card>
-          </motion.div>
+          </Wrapper>
         ))}
       </div>
 
@@ -149,7 +159,7 @@ const Certificate = () => {
           />
         </DialogContent>
       </Dialog>
-    </motion.div>
+    </Wrapper>
   );
 };
 
