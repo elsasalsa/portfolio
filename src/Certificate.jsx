@@ -31,6 +31,9 @@ const Certificate = () => {
     { image: '/cert/igdx.jpg', description: 'Participate in seminar activities for prospective Game Developers' },
     { image: '/cert/job-shadow.jpg', description: 'Participate in a program to understand the profession' },
     { image: '/cert/dea.jpg', description: 'Completed a comprehensive basic Digital Marketing training program' },
+    { image: '/cert/Figma.jpg', description: 'Completed an intensive course on Figma, focusing on UI/UX design' },
+    { image: '/cert/RevoU.jpg', description: 'Participated in the RevoU Coding Camp for Software Engineering' },
+    { image: '/cert/DSF42.jpg', description: 'Successfully finished the Faculty of IT - Frontend Development program' },
   ];
 
   const handleOpen = (image) => {
@@ -75,7 +78,7 @@ const Certificate = () => {
       />
 
       <div className="cert-grid">
-        {certificates.map((cert, idx) => (
+        {certificates.slice().reverse().map((cert, idx) => (
           <Wrapper
             key={idx}
             {...(!isMobile && {

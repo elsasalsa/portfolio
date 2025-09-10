@@ -101,7 +101,7 @@ function Home() {
             >
               Hi, I am Elsa!
             </motion.h1>
-            <h3>Frontend Developer</h3>
+            <h3>Software Developer</h3>
 
             <Link
               to="about"
