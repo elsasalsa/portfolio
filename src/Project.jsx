@@ -241,7 +241,7 @@ const Project = () => {
             key={index}
             onClick={() => handleOpen(project)}
             sx={{
-              height: 270,
+              height: { xs: '50vh', sm: 270 }, 
               minWidth: 300,
               flexShrink: 0,
               position: 'relative',
