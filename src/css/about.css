@@ -24,6 +24,9 @@
       line-height: 1.4;
     }
     .about-container {
-      padding-top: 15px;
+      padding-top: 30px;
+    }
+    .about-heading {
+      font-size: 2.3rem;
     }
   }
