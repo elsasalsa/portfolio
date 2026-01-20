@@ -77,9 +77,6 @@ function Home() {
               <Link to="about" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
                 About
               </Link>
-              <Link to="skill" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
-                Skill
-              </Link>
               <Link to="project" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
                 Project
               </Link>
