@@ -17,6 +17,7 @@ import './css/home.css';
 function Home() {
   const navigate = useNavigate();
   const [navbarBg, setNavbarBg] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -47,13 +48,20 @@ function Home() {
         expand="lg"
         variant="dark"
         fixed="top"
+        expanded={expanded}
+        onToggle={(value) => setExpanded(value)}
         style={{
           paddingTop: '15px',
           paddingBottom: '15px',
-          backgroundColor: navbarBg ? 'rgba(36, 36, 62, 0.7)' : 'transparent',
+          backgroundColor:
+            navbarBg || expanded
+              ? 'rgba(36, 36, 62, 0.85)'
+              : 'transparent',
           transition: 'background-color 0.3s ease',
-          backdropFilter: navbarBg ? 'blur(6px)' : 'none',
-          boxShadow: navbarBg ? '0 2px 10px rgba(0,0,0,0.2)' : 'none',
+          backdropFilter: navbarBg || expanded ? 'blur(6px)' : 'none',
+          boxShadow: navbarBg || expanded
+            ? '0 2px 10px rgba(0,0,0,0.25)'
+            : 'none',
         }}
       >
         <Container>
@@ -74,16 +82,16 @@ function Home() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
             <Nav className="custom-nav">
-              <Link to="about" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+              <Link to="about" spy={true} smooth={true} offset={-70} duration={500} className="nav-link" onClick={() => setExpanded(false)}>
                 About
               </Link>
-              <Link to="project" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+              <Link to="project" spy={true} smooth={true} offset={-70} duration={500} className="nav-link" onClick={() => setExpanded(false)}>
                 Project
               </Link>
-              <Link to="certificate" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+              <Link to="certificate" spy={true} smooth={true} offset={-70} duration={500} className="nav-link" onClick={() => setExpanded(false)}>
                 Certificate
               </Link>
-              <Link to="contact" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+              <Link to="contact" spy={true} smooth={true} offset={-70} duration={500} className="nav-link" onClick={() => setExpanded(false)}>
                 Contact
               </Link>
             </Nav>
