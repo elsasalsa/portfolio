@@ -1,9 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useTheme, useMediaQuery } from '@mui/material';
 import { Card, CardMedia, Modal, Box, Typography, Button } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import TranslateIcon from '@mui/icons-material/Translate';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { BsBoxArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import './css/project.css';
 
@@ -152,10 +156,23 @@ const Project = () => {
 
   const [open, setOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [hasCentered, setHasCentered] = useState(false);
 
   const [language, setLanguage] = useState('en');
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const MOBILE_STEP = 3;
+  const [visibleCount, setVisibleCount] = useState(MOBILE_STEP);
+
+  const handleShowMore = () => {
+    setVisibleCount(prev => prev + MOBILE_STEP);
+  };
+
   useEffect(() => {
+    if (isMobile) return;
+
     const container = scrollRef.current;
     if (!container) return;
 
@@ -193,6 +210,65 @@ const Project = () => {
     setLanguage(prev => (prev === 'en' ? 'id' : 'en'));
   };
 
+  const scrollByAmount = 340;
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: -scrollByAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: scrollByAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (isMobile) return;
+
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const images = container.querySelectorAll('img');
+    let loadedCount = 0;
+
+    const onImageLoad = () => {
+      loadedCount++;
+      if (loadedCount === images.length) {
+        const targetIndex = 8;
+        const targetCard = container.children[targetIndex];
+        if (!targetCard) return;
+
+        const containerCenter = container.clientWidth / 2;
+        const cardCenter =
+          targetCard.offsetLeft + targetCard.offsetWidth / 2;
+
+        container.scrollLeft = cardCenter - containerCenter;
+        setActiveIndex(targetIndex);
+        setHasCentered(true);
+      }
+    };
+
+    images.forEach(img => {
+      if (img.complete) {
+        onImageLoad();
+      } else {
+        img.addEventListener('load', onImageLoad);
+      }
+    });
+
+    return () => {
+      images.forEach(img => img.removeEventListener('load', onImageLoad));
+    };
+  }, []);
+
   return (
     <div className="project-container">
       <motion.div
@@ -213,56 +289,210 @@ const Project = () => {
         style={{ transformOrigin: "left" }}
       />
 
-      <Typography
-        variant="body2"
-        align="center"
-        sx={{
-          mb: 3,
-          color: '#b0bec5',
-          textShadow: '0px 1px 6px rgba(206, 206, 233, 0.5)',
-        }}
-      >
-        ← Swipe to view more projects →
-      </Typography>
-
-      <div
-        className="project-cards-wrapper"
-        ref={scrollRef}
-        style={{
-          display: 'flex',
-          gap: '40px',
-          overflowX: 'auto',
-          scrollSnapType: 'x mandatory',
-          paddingBottom: '20px',
-        }}
-      >
-        {[...projectData].reverse().map((project, index) => (
-          <Card
-            key={index}
-            onClick={() => handleOpen(project)}
+      {!isMobile && (
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 2,
+            mb: 3,
+          }}
+        >
+          <IconButton
+            onClick={scrollLeft}
             sx={{
-              height: { xs: '45vh', sm: 270 }, 
-              minWidth: 300,
-              flexShrink: 0,
-              position: 'relative',
-              overflow: 'hidden',
-              scrollSnapAlign: 'center',
-              transform: activeIndex === index ? 'scale(1.1)' : 'scale(1)',
-              transition: 'transform 0.3s ease',
-              boxShadow: activeIndex === index ? '0 6px 20px rgba(0,0,0,0.2)' : 'none',
-              ...(index === 0 && { marginLeft: '20px' }),
-              cursor: 'pointer',
+              border: '1px solid rgba(255,255,255,0.3)',
+              color: 'white',
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              '&:hover': {
+                backgroundColor: 'rgba(102,217,232,0.2)',
+                color: '#66d9e8',
+              },
             }}
           >
-            <CardMedia
-              component="img"
-              image={project.image}
-              alt={project.title}
-              sx={{ height: '100%', width: '100%', objectFit: 'cover' }}
-            />
-          </Card>
-        ))}
-      </div>
+            <ArrowBackIosNewIcon fontSize="small" />
+          </IconButton>
+
+          <IconButton
+            onClick={scrollRight}
+            sx={{
+              border: '1px solid rgba(255,255,255,0.3)',
+              color: 'white',
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              '&:hover': {
+                backgroundColor: 'rgba(102,217,232,0.2)',
+                color: '#66d9e8',
+              },
+            }}
+          >
+            <ArrowForwardIosIcon fontSize="small" />
+          </IconButton>
+        </Box>
+      )}
+
+      {isMobile ? (
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: '1fr',
+            gap: 2,
+            px: 2,
+          }}
+        >
+          {[...projectData]
+            .reverse()
+            .slice(0, visibleCount)
+            .map((project, index) => (
+              <Card
+                key={index}
+                onClick={() => handleOpen(project)}
+                sx={{
+                  position: 'relative',
+                  height: 160,
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+
+                  '&:hover .overlay': {
+                    opacity: 1,
+                  },
+                  '&:hover .overlayIcon': {
+                    opacity: 1,
+                    transform: 'scale(1)',
+                  },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  image={project.image}
+                  alt={project.title}
+                  sx={{ height: '100%', objectFit: 'cover' }}
+                />
+
+                <Box
+                  className="overlay"
+                  sx={{
+                    position: 'absolute',
+                    inset: 0,
+                    backgroundColor: 'rgba(0,0,0,0.55)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease',
+                  }}
+                >
+                  <Box
+                    className="overlayIcon"
+                    sx={{
+                      color: '#66d9e8',
+                      fontSize: 28,
+                      opacity: 0,
+                      transform: 'scale(0.7)',
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    <BsBoxArrowUpRight />
+                  </Box>
+                </Box>
+              </Card>
+            ))}
+          {visibleCount < projectData.length && (
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 3 }}>
+              <Button
+                onClick={handleShowMore}
+                sx={{
+                  textTransform: 'none',
+                  px: 4,
+                  py: 1,
+                  borderRadius: '999px',
+                  color: '#66d9e8',
+                  border: '1px solid rgba(102,217,232,0.5)',
+                  backgroundColor: 'rgba(102,217,232,0.1)',
+                  '&:hover': {
+                    backgroundColor: 'rgba(102,217,232,0.2)',
+                  },
+                }}
+              >
+                Show More
+              </Button>
+            </Box>
+          )}
+        </Box>
+
+      ) : (
+        <div
+          className="project-cards-wrapper"
+          ref={scrollRef}
+          style={{
+            display: 'flex',
+            gap: '40px',
+            overflowX: 'auto',
+            scrollSnapType: 'x mandatory',
+            paddingBottom: '20px',
+          }}
+        >
+          {[...projectData].reverse().map((project, index) => (
+            <Card
+              key={index}
+              onClick={() => handleOpen(project)}
+              sx={{
+                position: 'relative',
+                height: 270,
+                minWidth: 300,
+                flexShrink: 0,
+                scrollSnapAlign: 'center',
+                transform: activeIndex === index ? 'scale(1.1)' : 'scale(1)',
+                transition: 'transform 0.3s ease',
+                cursor: 'pointer',
+                overflow: 'hidden',
+
+                '&:hover .overlay': {
+                  opacity: 1,
+                },
+                '&:hover .overlayIcon': {
+                  opacity: 1,
+                  transform: 'scale(1)',
+                },
+              }}
+            >
+              <CardMedia
+                component="img"
+                image={project.image}
+                alt={project.title}
+                sx={{ height: '100%', objectFit: 'cover' }}
+              />
+
+              <Box
+                className="overlay"
+                sx={{
+                  position: 'absolute',
+                  inset: 0,
+                  backgroundColor: 'rgba(0,0,0,0.55)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  opacity: 0,
+                  transition: 'opacity 0.3s ease',
+                }}
+              >
+                <Box
+                  className="overlayIcon"
+                  sx={{
+                    color: '#66d9e8',
+                    fontSize: 32,
+                    opacity: 0,
+                    transform: 'scale(0.7)',
+                    transition: 'all 0.3s ease',
+                  }}
+                >
+                  <BsBoxArrowUpRight />
+                </Box>
+              </Box>
+            </Card>
+          ))}
+        </div>
+      )}
 
       <Modal open={open} onClose={handleClose}>
         <Box

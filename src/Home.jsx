@@ -11,6 +11,7 @@ import About from './About';
 import Project from './Project';
 import Certificate from './Certificate';
 import Contact from './Contact';
+import Skill from './Skill';
 import './css/home.css';
 
 function Home() {
@@ -58,7 +59,7 @@ function Home() {
         <Container>
           <Navbar.Brand href="/">
             <img
-              src="/img/el2.png" 
+              src="/img/el2.png"
               alt="Elsa’s Journey"
               style={{
                 width: '45px',
@@ -75,6 +76,9 @@ function Home() {
             <Nav className="custom-nav">
               <Link to="about" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
                 About
+              </Link>
+              <Link to="skill" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
+                Skill
               </Link>
               <Link to="project" spy={true} smooth={true} offset={-70} duration={500} className="nav-link">
                 Project
@@ -204,6 +208,9 @@ function Home() {
 
       <div id="about">
         <About />
+      </div>
+      <div id="skill">
+        <Skill />
       </div>
       <div id="project">
         <Project />

@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
+import { motion } from "framer-motion";
 import { Card, CardContent, Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import DownloadIcon from '@mui/icons-material/Download';
 import { useTheme, useMediaQuery } from '@mui/material';
-import { motion } from "framer-motion";
+import {
+    Timeline,
+    TimelineItem,
+    TimelineSeparator,
+    TimelineConnector,
+    TimelineContent,
+    TimelineDot,
+    TimelineOppositeContent,
+} from "@mui/lab";
 import "./css/about.css";
 
 const About = () => {
@@ -17,40 +26,48 @@ const About = () => {
         setSelectedCard(card);
     };
 
-    const logos = [
-        { src: '/img/html.png', alt: 'HTML' },
-        { src: '/img/css.png', alt: 'CSS' },
-        { src: '/img/js.jpg', alt: 'JavaScript' },
-        { src: '/img/ts.jpg', alt: 'TypeScript' },
-        { src: '/img/php.png', alt: 'PHP' },
-        { src: '/img/laravel.png', alt: 'Laravel' },
-        { src: '/img/node.png', alt: 'Node.js' },
-        { src: '/img/react.png', alt: 'React.js' },
-        { src: '/img/next.png', alt: 'Next' },
-        { src: '/img/tlwnd.png', alt: 'Python' },
-        { src: '/img/figma.png', alt: 'PHP' },
-        { src: '/img/github.png', alt: 'MySQL' },
+    const careerPath = [
+        {
+            date: "Jan 2024 – Jun 2024",
+            role: "Frontend Developer (Intern)",
+            company: "PT Exorty Indonesia",
+        },
+        {
+            date: "Aug 2024 – Oct 2024",
+            role: "Frontend Developer (Part Time)",
+            company: "PT Exorty Indonesia",
+        },
+        {
+            date: "Oct 2025 – Dec 2025",
+            role: "Frontend Developer",
+            company: "CV Funware Nurbadi Digital",
+        },
+        {
+            date: "Jan 2026 – Present",
+            role: "Frontend Developer",
+            company: "PT Mediatama Indo Teknologi",
+        },
     ];
 
     return (
         <div className="about-container">
             <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: false }}
-                  >
-                    <h1 className="about-heading">Who I Am</h1>
-                  </motion.div>
-            
-                  <motion.div
-                    className="about-underline"
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    viewport={{ once: false }}
-                    style={{ transformOrigin: "left" }}
-                  />
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: false }}
+            >
+                <h1 className="about-heading">Who I Am</h1>
+            </motion.div>
+
+            <motion.div
+                className="about-underline"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: false }}
+                style={{ transformOrigin: "left" }}
+            />
 
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '-20px', zIndex: 1, position: 'relative' }}>
                 <ButtonGroup
@@ -71,10 +88,10 @@ const About = () => {
                         About
                     </Button>
                     <Button
-                        onClick={() => handleCardChange("skills")}
-                        sx={buttonStyle("skills", selectedCard)}
+                        onClick={() => handleCardChange("career")}
+                        sx={buttonStyle("career", selectedCard)}
                     >
-                        Skills
+                        Career
                     </Button>
                     <Button
                         onClick={() => handleCardChange("showcase")}
@@ -88,53 +105,62 @@ const About = () => {
             {selectedCard === "about" && (
                 <Card variant="outlined" sx={cardStyle}>
                     <Typography style={{ wordSpacing: '3px', fontSize: '1.2rem', marginBottom: '20px' }}>
-                        Hi! My name is <b>Elsa Salsa Bila</b>. I’m a Software Developer and a proud graduate of Wikrama Bogor 
-                        Vocational High School, specializing in Software and Game Development. With a strong passion for 
-                        creating intuitive and engaging digital experiences, I’m dedicated to continuous learning and 
-                        growth in the ever-evolving world of technology. My six-month internship as a Frontend Developer 
-                        allowed me to gain hands-on experience in building responsive, user-friendly interfaces, which 
+                        Hi! My name is <b>Elsa Salsa Bila</b>. I’m a Software Developer and a proud graduate of Wikrama Bogor
+                        Vocational High School, specializing in Software and Game Development. With a strong passion for
+                        creating intuitive and engaging digital experiences, I’m dedicated to continuous learning and
+                        growth in the ever-evolving world of technology. My six-month internship as a Frontend Developer
+                        allowed me to gain hands-on experience in building responsive, user-friendly interfaces, which
                         strengthened both my technical expertise and my ability to bring creative ideas to life.
                     </Typography>
                 </Card>
             )}
 
-            {selectedCard === "skills" && (
+            {selectedCard === "career" && (
                 <Card variant="outlined" sx={cardStyle}>
                     <CardContent>
-                        <Box
-                            sx={{
-                                display: 'grid',
-                                gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)',
-                                columnGap: '20px',
-                                rowGap: '60px',
-                                justifyItems: 'center',
-                                alignItems: 'center',
-                                marginTop: '10px',
-                            }}
-                        >
-                            {logos.map((logo, index) => (
-                                <Box
-                                    key={index}
-                                    sx={{
-                                        width: 48,
-                                        height: 48,
-                                        borderRadius: '12px',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                    }}
-                                >
-                                    <img
-                                        src={logo.src}
-                                        alt={logo.alt}
-                                        style={{
-                                            width: '76px',
-                                            height: '76px',
+                        <Timeline position={isMobile ? "right" : "alternate"}>
+                            {careerPath.map((item, index) => (
+                                <TimelineItem key={index}>
+                                    <TimelineOppositeContent
+                                        sx={{
+                                            display: { xs: 'none', sm: 'block' },
+                                            color: '#66d9e8',
+                                            fontSize: '0.85rem',
+                                            mt: '4px',
                                         }}
-                                    />
-                                </Box>
+                                    >
+                                        {item.date}
+                                    </TimelineOppositeContent>
+
+                                    <TimelineSeparator>
+                                        <TimelineDot sx={{ backgroundColor: '#66d9e8' }} />
+                                        {index !== careerPath.length - 1 && <TimelineConnector />}
+                                    </TimelineSeparator>
+
+                                    <TimelineContent sx={{ pb: isMobile ? 3 : 2 }}>
+                                        {isMobile && (
+                                            <Typography
+                                                sx={{
+                                                    fontSize: '0.8rem',
+                                                    color: '#66d9e8',
+                                                    mb: 0.5,
+                                                }}
+                                            >
+                                                {item.date}
+                                            </Typography>
+                                        )}
+
+                                        <Typography sx={{ fontWeight: 600, fontSize: '1.05rem' }}>
+                                            {item.role}
+                                        </Typography>
+
+                                        <Typography sx={{ fontSize: '0.9rem', color: '#a0aec0' }}>
+                                            {item.company}
+                                        </Typography>
+                                    </TimelineContent>
+                                </TimelineItem>
                             ))}
-                        </Box>
+                        </Timeline>
                     </CardContent>
                 </Card>
             )}
