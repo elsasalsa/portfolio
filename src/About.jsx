@@ -105,7 +105,7 @@ const About = () => {
             {selectedCard === "about" && (
                 <Card variant="outlined" sx={cardStyle}>
                     <Typography style={{ wordSpacing: '3px', fontSize: '1.2rem', marginBottom: '20px' }}>
-                        Hi! My name is <b>Elsa Salsa Bila</b>. I’m a Software Developer and a proud graduate of Wikrama Bogor
+                        Hi! My name is <b>Elsa Salsa Bila</b>. I’m a Web Developer and a proud graduate of Wikrama Bogor
                         Vocational High School, specializing in Software and Game Development. With a strong passion for
                         creating intuitive and engaging digital experiences, I’m dedicated to continuous learning and
                         growth in the ever-evolving world of technology. My six-month internship as a Frontend Developer
