@@ -64,8 +64,8 @@ const Skill = () => {
             <Card
               key={index}
               sx={{
-                minWidth: { xs: 80, md: 120 },
-                height: { xs: 80, md: 120 },
+                minWidth: { xs: 100, md: 120 },
+                height: { xs: 100, md: 120 },
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
